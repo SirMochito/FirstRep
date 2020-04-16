@@ -1,0 +1,168 @@
+body {
+	background-color: #b3ecff;
+	
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+h1,h2 {
+	color: white;
+	text-transform: cpitalize;
+	font-family: "Calibri";
+	
+}
+
+h1 {
+	font-family: "Snap ITC", sans-serif;
+	font-size: 90px;
+	text-align: center;
+	
+}
+
+ul {
+	text-align: left;
+	font-size: 0;
+	
+}
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+
+.game-field-wrapper {
+	background-color: rgba(85, 85, 85, 0.3);
+	padding: 20px;
+	border-radius: 5px;
+	margin: 100px auto 0;
+	width: 480px;
+	
+}
+
+.card {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 5px;
+	border-radius: 5px;
+
+}
+
+img { 
+	width: 100px;
+	height: 100px;
+	
+}
+
+.button { 
+	text-transform: capitalize;
+	font-weight: bold;
+	color: #5cb85c ;
+	outline: 0;
+	border: 0;
+	background-color: white;
+	transition: background-color 0.3s;
+	vertical-align: middle;
+
+}	
+
+.button:hover {
+	background-color: gray;
+	
+}
+
+.button-big { 
+	margin-top: 50px;
+	font-size: 36px;
+	width: 200px;
+	height: 75px;
+	
+}
+
+.button-small {
+	font-size: 20px;
+	width: 150px;
+	height: 35px;
+}
+
+.button-panel button:nth-child(1) {
+	margin-right:20px;
+	
+}
+	
+.button-panel { 
+	text-align: center;
+	margin-top: 20px;
+	
+}
+
+.game-field, .winner {
+	display: none;
+	
+}
+.shirt-color-1 {
+	background: url("../images/pattern.jpg");
+	background-size: cover;
+}
+
+.rotation-effect {
+	pointer-events: none;
+	animation-name: flipInY;
+	transform: rotate(0);
+	cursor: default;
+	backface-visibility: visible;
+    animation-duration: .6s;
+    background-size: countain;
+	
+}
+
+@keyframes flipInY {
+
+    from {
+
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+
+        animation-timing-function: ease-in;
+
+        opacity: 1;
+
+    }
+
+    40% {
+
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+
+        animation-timing-function: ease-in;
+
+    }
+
+    60% {
+
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+
+        opacity: 1;
+
+    }
+
+ 
+
+    80% {
+
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+
+    }
+
+    to {
+
+        transform: perspective(400px);
+
+    }
+
+}
