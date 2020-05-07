@@ -38,6 +38,8 @@ let start = function() {
 	
 	let arrayId = fillArray();
 	
+	console.log(arrayId);
+	
 	for (let i = 0; i < 12; i++) {
   
 	const card = document.createElement('li');
@@ -68,11 +70,16 @@ let compareCheckCards = function(firstOpen,secondOpen) {
 	}
 	else if(openCardsName.length === 2 && openCardsName[0] !== openCardsName[1]){
 		setTimeout(function(){
-			
 		firstOpen.removeAttribute("style");
+		console.log(firstOpen);
 		secondOpen.removeAttribute("style");
 		
-		}, 1000)
+		firstOpen = 0;
+		}, 1000);
+		
+		openCardsName = [];
+		
+		
 	};
 	
 	
@@ -82,7 +89,7 @@ let displayCard = function(e) {
 	if (e.target.tagName !== "LI") return;
 	e.target.style.background = openCardImage[e.target.id];
 	e.target.style.backgroundSize = 'cover';
-	e.target.classList.add('rotation-effect');
+	//e.target.classList.add('rotation-effect');
 	
 	openCardsName.push(e.target.getAttribute("id")); console.log(openCardsName);
 	
@@ -92,6 +99,7 @@ let displayCard = function(e) {
 	}
 	else {
 		secondOpen = e.target; console.log(secondOpen);
+		
 	};
 	compareCheckCards(firstOpen,secondOpen);
 	
@@ -116,7 +124,7 @@ let fillArray = function () {
 	
 }
 
-console.log(fillArray());
+
 
 
 
