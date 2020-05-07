@@ -64,7 +64,7 @@ img {
 .button { 
 	text-transform: capitalize;
 	font-weight: bold;
-	color: #5cb85c ;
+	color: blue ;
 	outline: 0;
 	border: 0;
 	background-color: white;
@@ -122,6 +122,12 @@ img {
     background-size: countain;
 	
 }
+
+.disappearance{
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s, visibility 0s linear .5s;
+};
 
 @keyframes flipInY {
 

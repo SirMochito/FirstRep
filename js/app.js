@@ -21,12 +21,19 @@ const openCardImage = [
 ];
 const cards = document.querySelector('.cards');
 
+let firstOpen; 
+
+let secondOpen;
+
+let openCardsName;
+
 buttonPlay.addEventListener('click', function () {
 	sectionGreeting.style.display = 'none';
 	sectionGameField.style.display = 'block';
 });
 
 let start = function() { 
+	openCardsName = [];
 	cards.innerHTML = '';
 	
 	let arrayId = fillArray();
@@ -50,15 +57,45 @@ buttonBack.addEventListener('click', function () {
 buttonRestart.addEventListener('click', function () {
 	sectionGreeting.style.display = 'none';
 	sectionGameField.style.display = 'block';
-}); 
+});
 
-
+let compareCheckCards = function(firstOpen,secondOpen) {
+	if(openCardsName.length === 2 && openCardsName[0] === openCardsName[1]){
+		firstOpen.classList.add('disappearance');
+		secondOpen.classList.add('disappearance');
+		openCardsName = [];
+		firstOpen = 0;
+	}
+	else if(openCardsName.length === 2 && openCardsName[0] !== openCardsName[1]){
+		setTimeout(function(){
+			
+		firstOpen.removeAttribute("style");
+		secondOpen.removeAttribute("style");
+		
+		}, 1000)
+	};
+	
+	
+};
 
 let displayCard = function(e) {
 	if (e.target.tagName !== "LI") return;
 	e.target.style.background = openCardImage[e.target.id];
 	e.target.style.backgroundSize = 'cover';
 	e.target.classList.add('rotation-effect');
+	
+	openCardsName.push(e.target.getAttribute("id")); console.log(openCardsName);
+	
+	if(!firstOpen) {
+	firstOpen = e.target; console.log(firstOpen);
+	
+	}
+	else {
+		secondOpen = e.target; console.log(secondOpen);
+	};
+	compareCheckCards(firstOpen,secondOpen);
+	
+	
 };
 
 cards.addEventListener('click', displayCard);
@@ -80,6 +117,8 @@ let fillArray = function () {
 }
 
 console.log(fillArray());
+
+
 
 
 
